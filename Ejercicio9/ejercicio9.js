@@ -17,5 +17,8 @@ MapaPlatos.set(new platoCocina('Berenjenas',150,7),['Berenjena','Carne','Aceite'
 
 for(let [persona,arrayIngredientes] of MapaPlatos){
     console.log(persona.toString())
-    console.log(arrayIngredientes[0])
+    for (let i = 0; i < arrayIngredientes.length; i++) {
+        console.log('Ingrediente '+(i+1)+': '+arrayIngredientes[i])
+        
+    }
 }

@@ -10,8 +10,10 @@ class platoCocina{
 }
 
 let MapaPlatos = new Map();
-MapaPlatos.set(new platoCocina('Cocido',60,6),['Garbanzo','Sal','Patatas','Chorizo','Zanahorias']);
-MapaPlatos.set(new platoCocina('Tortilla',45,7),['Huevos,Sal','Patatas','Aceite','Cebolla']);
-MapaPlatos.set(new platoCocina('Berenjenas',150,7),['Berenjena','Carne','Aceite','Sal','Queso','Pimientos','Tomates','Bechamel']);
+let plato1 = new platoCocina('Cocido',60,6);
+let plato2 = new platoCocina('Tortilla',45,7);
+let plato3 = new platoCocina('Berenjenas',150,7);
 
-console.log(MapaPlatos.get(0));
+MapaPlatos.set(plato1,['Garbanzo','Sal','Patatas','Chorizo','Zanahorias']);
+MapaPlatos.set(palto2,['Huevos,Sal','Patatas','Aceite','Cebolla']);
+MapaPlatos.set(plato3,['Berenjena','Carne','Aceite','Sal','Queso','Pimientos','Tomates','Bechamel']);

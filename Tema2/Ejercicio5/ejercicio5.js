@@ -1,3 +1,5 @@
+// Ordena un array de números con una función que he creado
+
 function ordenarArray(num1, num2) {
     if (num1 > num2) {
         return 1;

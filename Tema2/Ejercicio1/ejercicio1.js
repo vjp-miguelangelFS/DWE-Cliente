@@ -1,3 +1,4 @@
+// Compara dos cadenas y dice cual de las dos es la más corta
 function compararCadenas(cad1, cad2) {
 
     if (typeof cad1 != 'string' || typeof cad2 != 'string') {

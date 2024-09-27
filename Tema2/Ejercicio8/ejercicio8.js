@@ -1,3 +1,5 @@
+// Checkea si todos los valores son números y en caso de que sean numeros multiplica todo el array por dos y comprueba que todos los numeros son pares
+
 function procesarArray(arrayCheck) {
     if (arrayCheck.every(num => typeof num == 'number')) {
         arrayCheck = arrayCheck.map(num => num * 2);

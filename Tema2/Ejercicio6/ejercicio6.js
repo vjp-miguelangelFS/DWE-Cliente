@@ -1,3 +1,5 @@
+// Creas un Array y los vas modificando
+
 arrayModificar = [10, 20, 30, 40];
 console.log(arrayModificar.join('#'))
 

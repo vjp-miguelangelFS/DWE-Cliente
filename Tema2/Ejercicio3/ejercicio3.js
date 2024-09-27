@@ -1,3 +1,5 @@
+// Muestra la cantidad de tipo de variales tiene el array que le pasas a la función
+
 function cantidadDeTiposElementos(...arrayElementos) {
     let contadorString = 0;
     let contadorNumber = 0;

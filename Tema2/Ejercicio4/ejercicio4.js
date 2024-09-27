@@ -1,3 +1,5 @@
+// Crea una cadena de caracteres que te muestra los dos predefinidos o los datos que les pases por paramentro
+
 function convertirEntradas(producto = 'Producto generico', precio = 100, impuestos = 21) {
 
     if (typeof producto == 'string' && typeof precio == 'number' && typeof impuestos == 'number') {

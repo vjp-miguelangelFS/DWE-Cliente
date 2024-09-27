@@ -1,3 +1,5 @@
+// Creao una clase para crear objetos y posteriormente los introduzco en un mapa para mostrarlo por pantalla mediante dos for y utilizando el toString de la clase platoCocina
+
 class platoCocina{
     constructor(nombrePlato,duracionMinutos,dificultad){
         this.nombrePlato = nombrePlato;

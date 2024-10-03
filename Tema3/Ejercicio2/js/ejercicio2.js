@@ -10,3 +10,6 @@ console.log(document.querySelector('.linkNormal:nth-of-type(2)'))
 console.log(document.querySelector('.linkNormal[title^=Spider]').innerHTML)
 // 6
 console.log(document.querySelector('a+.linkNormal[title^=Spider]'))
+// 7
+
+// 8

@@ -14,30 +14,22 @@ function crearMazo() {
 
 function turnoJugador(mazoDeCartas) {
 
-    let sumaJugador = 0
-    let seguir = true
+    let manoJugador = []
 
     do {
         let numAleatorio = parseInt(Math.random() * mazoDeCartas.length);
 
         console.log('Tu carta es: ' + mazoDeCartas[numAleatorio][1] + ' de ' + mazoDeCartas[numAleatorio][0])
-        if (typeof mazoDeCartas[numAleatorio][1] == 'string') {
-            sumaJugador += 10;
-        } else {
-            sumaJugador += mazoDeCartas[numAleatorio][1];
-        }
 
-        if (sumaJugador > 21) {
-            alert('Has perdido te has pasado de 21')
-            seguir = false
-        } else {
-            seguir = confirm('Desea coguer otra carta');
-        }
+        manoJugador.push(mazoDeCartas[numAleatorio])
+
         mazoDeCartas.splice(numAleatorio, 1)
-    } while (seguir);
-    console.log('Tus cartas suman ' + sumaJugador)
-    return sumaJugador;
+    } while (confirm('Desea coger otra carta'));
+
+    return manoJugador;
 }
+
+
 
 function turnoMaquina(mazoDeCartas, numJugador) {
     let sumaMaquina = 0;

@@ -18,13 +18,13 @@ function turnoJugador(mazoDeCartas) {
     let seguir = true
 
     do {
-        let numAleatorio = parseInt(Math.random() * 52);
+        let numAleatorio = parseInt(Math.random() * mazoDeCartas.length);
 
-        console.log('Tu carta es: ' + mazocartas[numAleatorio][1] + ' de ' + mazocartas[numAleatorio][0])
-        if (typeof mazocartas[numAleatorio][1] == 'string') {
+        console.log('Tu carta es: ' + mazoDeCartas[numAleatorio][1] + ' de ' + mazoDeCartas[numAleatorio][0])
+        if (typeof mazoDeCartas[numAleatorio][1] == 'string') {
             sumaJugador += 10;
         } else {
-            sumaJugador += mazocartas[numAleatorio][1];
+            sumaJugador += mazoDeCartas[numAleatorio][1];
         }
 
         if (sumaJugador > 21) {
@@ -33,9 +33,9 @@ function turnoJugador(mazoDeCartas) {
         } else {
             seguir = confirm('Desea coguer otra carta');
         }
-        mazocartas.splice(numAleatorio, 1)
+        mazoDeCartas.splice(numAleatorio, 1)
     } while (seguir);
-    console.log('Tus cartas suman '+sumaJugador)
+    console.log('Tus cartas suman ' + sumaJugador)
     return sumaJugador;
 }
 
@@ -63,12 +63,12 @@ function turnoMaquina(mazoDeCartas, numJugador) {
         mazocartas.splice(numAleatorioMaquina, 1)
     } while (seguir);
 
-    console.log('Suma de las cartas de la maquina '+sumaMaquina)
+    console.log('Suma de las cartas de la maquina ' + sumaMaquina)
 }
 
 
 let mazocartas = crearMazo();
-let sumaJugador = turnoJugador();
+let sumaJugador = turnoJugador(mazocartas);
 
 if (sumaJugador <= 21) {
     turnoMaquina(mazocartas, sumaJugador)

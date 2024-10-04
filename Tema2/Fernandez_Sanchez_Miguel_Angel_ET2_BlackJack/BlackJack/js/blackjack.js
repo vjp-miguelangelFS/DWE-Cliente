@@ -6,9 +6,10 @@ function crearMazo(){
 
     for (let i = 0; i < palos.length; i++) {
         for (let f = 0; f < valores.length; f++) {
-            mazoCartas.push[array(i,f)]
+            mazoCartas.push(palos[i],valores[f])
         }
     }
-
     console.log(mazoCartas)
 }
+
+crearMazo();

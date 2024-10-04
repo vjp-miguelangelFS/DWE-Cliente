@@ -2,7 +2,7 @@ let div = document.getElementById('normalDiv')
 // 1
 div.style.boxSizing = 'border-box'
 // 2
-div.style.maxWidth = '200px'
+div.style.maxWidth = '200pgx'
 // 3
 div.style.padding = '50px'
 // 4

@@ -12,6 +12,17 @@ function crearMazo() {
     return mazoCartas
 }
 
+function calcularValorMano(manoDeCartas) {
+
+    let sumaCartas = 0
+
+    for (let i = 0; i < manoDeCartas.length; i++) {
+        sumaCartas += manoDeCartas[i][1]
+
+    }
+    return sumaCartas
+}
+
 function turnoJugador(mazoDeCartas) {
 
     let manoJugador = []
@@ -26,7 +37,7 @@ function turnoJugador(mazoDeCartas) {
         mazoDeCartas.splice(numAleatorio, 1)
     } while (confirm('Desea coger otra carta'));
 
-    return manoJugador;
+    return calcularValorMano(manoJugador);
 }
 
 
@@ -64,4 +75,8 @@ let sumaJugador = turnoJugador(mazocartas);
 
 if (sumaJugador <= 21) {
     turnoMaquina(mazocartas, sumaJugador)
+    console.log('Suma de tus cartas ' + sumaJugador)
+} else {
+    alert('Has perdido te has pasado de 21')
 }
+

@@ -7,8 +7,14 @@ selectorA.setAttribute('id','aTwitter')
 
 // 3
 
-selectorA.setAttribute('href','https://twitter.x.com')
+selectorA.setAttribute('href','https://twitter.com')
 
 // 4
 
-selectorA.setAttribute('')
+selectorA.textContent= 'Twitter'
+
+// 5
+
+if(selectorA.hasAttribute['title']){
+    selectorA.setAttribute['title','Ir a twitter']
+}

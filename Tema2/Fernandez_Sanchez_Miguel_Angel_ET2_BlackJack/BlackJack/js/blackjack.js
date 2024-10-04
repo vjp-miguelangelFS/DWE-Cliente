@@ -9,7 +9,67 @@ function crearMazo() {
             mazoCartas.push([palos[i], valores[f]])
         }
     }
-    console.log(mazoCartas)
+    return mazoCartas
 }
 
-crearMazo();
+function turnoJugador(mazoDeCartas) {
+
+    let sumaJugador = 0
+    let seguir = true
+
+    do {
+        let numAleatorio = parseInt(Math.random() * 52);
+
+        console.log('Tu carta es: ' + mazocartas[numAleatorio][1] + ' de ' + mazocartas[numAleatorio][0])
+        if (typeof mazocartas[numAleatorio][1] == 'string') {
+            sumaJugador += 10;
+        } else {
+            sumaJugador += mazocartas[numAleatorio][1];
+        }
+
+        if (sumaJugador > 21) {
+            alert('Has perdido te has pasado de 21')
+            seguir = false
+        } else {
+            seguir = confirm('Desea coguer otra carta');
+        }
+        mazocartas.splice(numAleatorio, 1)
+    } while (seguir);
+    console.log('Tus cartas suman '+sumaJugador)
+    return sumaJugador;
+}
+
+function turnoMaquina(mazoDeCartas, numJugador) {
+    let sumaMaquina = 0;
+    let seguir = true;
+
+    do {
+        let numAleatorioMaquina = parseInt(Math.random() * mazoDeCartas.length);
+
+        if (typeof mazoDeCartas[numAleatorioMaquina][1] == 'string') {
+            sumaMaquina += 10;
+        } else {
+            sumaMaquina += mazoDeCartas[numAleatorioMaquina][1];
+        }
+
+
+        if (sumaMaquina > numJugador && sumaMaquina <= 21) {
+            alert('Has perdido, la maquina gana')
+            seguir = false;
+        } else if (sumaMaquina > 21) {
+            alert('Jugador gana, la maquina se ha paso de 21')
+            seguir = false;
+        }
+        mazocartas.splice(numAleatorioMaquina, 1)
+    } while (seguir);
+
+    console.log('Suma de las cartas de la maquina '+sumaMaquina)
+}
+
+
+let mazocartas = crearMazo();
+let sumaJugador = turnoJugador();
+
+if (sumaJugador <= 21) {
+    turnoMaquina(mazocartas, sumaJugador)
+}

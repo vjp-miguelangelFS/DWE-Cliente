@@ -1,5 +1,5 @@
 let matriz = new Array(10);
-let colores = ['red','blue','green','yellow'];
+let colores = ['red', 'blue', 'green', 'yellow'];
 for (let i = 0; i < matriz.length; i++) {
     matriz[i] = new Array(10)
 }
@@ -21,19 +21,40 @@ let boton = document.getElementsByTagName('button')
 
 
 for (let i = 0; i < boton.length; i++) {
-    
+
     boton[i].style.height = '25px'
     boton[i].style.width = '25px'
     boton[i].style.margin = '2px'
 }
 
-document.addEventListener("DOMContentLoaded",function (){
+document.addEventListener("DOMContentLoaded", function () {
+    let numColor = 0;
+
+
     for (let i = 0; i < boton.length; i++) {
-    
-        boton[i].addEventListener('click',(evento) =>{
-            if(evento.button == 0){
-                boton[i].style.backgroundColor = 'red'
+
+        boton[i].addEventListener('mouseup', (evento) => {
+            if (numColor == -1) {
+                numColor = 3;
+            } else if (numColor == 4) {
+                numColor = 0
             }
+            switch (evento.button) {
+                case 0:
+                    boton[i].style.backgroundColor = colores[numColor]
+                    numColor++;
+                    break;
+                case 1:
+                    boton[i].style.backgroundColor = 'grey'
+                    break;
+                case 2:
+                    boton[i].style.backgroundColor = colores[numColor]
+                    numColor--;
+                    break;
+                default:
+                    break;
+            }
+            console.log(numColor)
         })
     }
 });

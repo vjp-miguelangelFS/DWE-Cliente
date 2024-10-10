@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 default:
                     break;
             }
-            console.log(numColor)
         })
     }
 });

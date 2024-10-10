@@ -25,27 +25,30 @@ for (let i = 0; i < boton.length; i++) {
     boton[i].style.height = '25px'
     boton[i].style.width = '25px'
     boton[i].style.margin = '2px'
+    boton[i].style.backgroundColor = '#f0f0f0'
+    boton[i].style.border = '1px solid grey'
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    let numColor = 0;
 
 
     for (let i = 0; i < boton.length; i++) {
-
+        let numColor = 0;
         boton[i].addEventListener('mouseup', (evento) => {
             if (numColor == -1) {
                 numColor = 3;
             } else if (numColor == 4) {
                 numColor = 0
             }
+
             switch (evento.button) {
                 case 0:
                     boton[i].style.backgroundColor = colores[numColor]
                     numColor++;
                     break;
                 case 1:
-                    boton[i].style.backgroundColor = 'grey'
+                    boton[i].style.backgroundColor = '#f0f0f0'
                     break;
                 case 2:
                     boton[i].style.backgroundColor = colores[numColor]
